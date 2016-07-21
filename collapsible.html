@@ -1,0 +1,60 @@
+<div class="label-text-lg">Accordion</div>
+<div class="code-wrapper">
+    <div class="code-label">Code Snippet</div>
+    <xmp class="prettyprint card-panel code-block">
+    <uib-accordion close-others="false">
+        <uib-accordion-group heading="Accordion Header" is-open="false" is-disabled="false">
+            <!-- Header One Content -->
+        </uib-accordion-group>
+        <uib-accordion-group>
+            <uib-accordion-heading>
+                <span class="fa fa-comments collapsible-icon"> </span>HTML Header
+            </uib-accordion-heading>
+            <!--Header Two Content-->
+        </uib-accordion-group>
+        <uib-accordion-group heading="Disabled Header" is-open="true" is-disabled="true">
+            <!--Header Three Content -->
+        </uib-accordion-group>
+    </uib-accordion>
+    </xmp>
+</div>
+<uib-accordion close-others="false">
+    <uib-accordion-group heading="Accordion Header" is-open="false" is-disabled="false">
+        Header One Content -
+
+        Lorem ipsum dolor sit amet, sea debet verear vituperatoribus in, eu sed euismod euripidis. Clita vitae graece cu vix,
+        tollit impedit ea cum. Vel soluta mucius bonorum no, ex eos sanctus sapientem, vitae dolores vel ut. Cu mel illum nonumy
+        aperiam, eu pri dolorum corrumpit, ex quas explicari percipitur vix.
+    </uib-accordion-group>
+
+    <uib-accordion-group>
+        <uib-accordion-heading>
+            <span class="fa fa-comments collapsible-icon"> </span>HTML Header
+        </uib-accordion-heading>
+        Header Two Content -
+
+        Lorem ipsum dolor sit amet, sea debet verear vituperatoribus in, eu sed euismod euripidis. Clita vitae graece cu vix,
+        tollit impedit ea cum. Vel soluta mucius bonorum no, ex eos sanctus sapientem, vitae dolores vel ut. Cu mel illum nonumy
+        aperiam, eu pri dolorum corrumpit, ex quas explicari percipitur vix.
+    </uib-accordion-group>
+
+    <uib-accordion-group heading="Disabled Header" is-open="true" is-disabled="true">
+        Header Three Content -
+
+        Lorem ipsum dolor sit amet, sea debet verear vituperatoribus in, eu sed euismod euripidis. Clita vitae graece cu vix,
+        tollit impedit ea cum. Vel soluta mucius bonorum no, ex eos sanctus sapientem, vitae dolores vel ut. Cu mel illum nonumy
+        aperiam, eu pri dolorum corrumpit, ex quas explicari percipitur vix.
+    </uib-accordion-group>
+</uib-accordion>
+<div class="label-text-lg" data-ng-click="isCollapsed = !isCollapsed">
+    Collapse
+    <span class="fa fa-angle-up" data-ng-show="!isCollapsed"></span>
+    <span class="fa fa-angle-down" data-ng-show="isCollapsed"></span>
+</div>
+<div data-uib-collapse="isCollapsed">
+    <div class="well well-lg">
+        Lorem ipsum dolor sit amet, sea debet verear vituperatoribus in, eu sed euismod euripidis. Clita vitae graece cu vix,
+        tollit impedit ea cum. Vel soluta mucius bonorum no, ex eos sanctus sapientem, vitae dolores vel ut. Cu mel illum nonumy
+        aperiam, eu pri dolorum corrumpit, ex quas explicari percipitur vix.
+    </div>
+</div> <!-- /collapsible -->

@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-md-2 subheading-label"> Modal Properties</div>
+    <div class="col-md-10 subheading-label">Modal</div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <span class="label-text">modalType:</span> success<br/>
+        <span class="label-text">icon:</span> fa-check-circle<br/>
+        <span class="label-text">title :</span> Confirmation
+    </div>
+    <div class="col-md-10">
+        <button type="button" class="btn btn-success btn-lg" data-ng-click="openSuccess()">Open Success modal</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <span class="label-text">modalType :</span> warning<br/>
+        <span class="label-text">icon:</span> fa-warning<br/>
+        <span class="label-text">title :</span> warning
+    </div>
+    <div class="col-md-10">
+        <button type="button" class="btn btn-warning btn-lg" data-ng-click="openWarning()">Open Warning modal</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <span class="label-text">modalType :</span> danger<br/>
+        <span class="label-text">icon:</span> fa-exclamation-circle<br/>
+        <span class="label-text">title :</span> Error
+    </div>
+    <div class="col-md-10">
+        <button type="button" class="btn btn-danger btn-lg" data-ng-click="openError()">Open Error modal</button>
+    </div>
+</div> <!-- /modals -->
+<br/>
+<div class="code-wrapper">
+    <div class="code-label">Code Snippet</div>
+    <xmp class="prettyprint card-panel code-block">
+
+    <button type="button" class="btn btn-success btn-lg" data-ng-click="openModal()">Open Success modal</button>
+
+    <script>
+    $scope.openSuccess = function () {
+        /* Common properties to transform the modal into a success, warning or error modal */
+        $scope.modalProperties = {
+            "modalType" : "success",
+            "icon": "fa-check-circle",
+            "title" : "Confirmation"
+        };
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'modal-template.html', /* Modal template ---see below */
+            controller: 'ModalInstanceCtrl', /* [Optional] Used when a value has to be passed/ retrieved from a modal */
+            resolve: {
+                modalProperties: function () {
+                    return $scope.modalProperties; /* [Optional] Value passed to modal */
+                }
+            }
+        });
+        /* [Optional] function called when value is returned from modal */
+        modalInstance.result.then(function (selectedItem) {
+            $log.info('Returned '+selectedItem);
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+
+    app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, modalProperties) {
+        $scope.modalProperties = modalProperties;
+        $scope.ok = function () {
+            $uibModalInstance.close(modalProperties);
+        };
+        $scope.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+    });
+
+    </script>
+
+    <!-- modal-template.html -->
+    <script type="text/ng-template" id="template1.html">
+        <div class="modal-header {/{modalProperties.modalType}}">
+            <span class="icon fa {/{modalProperties.icon}}"> </span>
+            <span class="modal-title">{/{modalProperties.title}}</span>
+            <span class="close fa fa-close pull-right"> </span>
+        </div>
+        <div class="modal-body">
+           <!-- Modal Body-->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-{/{modalProperties.modalType}}" type="button" data-ng-click="ok()">OK</button>
+        </div>
+    </script>
+    </xmp>
+</div>
+

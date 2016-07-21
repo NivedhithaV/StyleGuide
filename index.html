@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Style Guide</title>
+
+    <!-- Google Open Sans Font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Font awesome icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Toastr CSS -->
+    <link href="css/angular-toastr.min.css" rel="stylesheet">
+    <!-- Style Guide -->
+    <link href="css/style-guide.css" rel="stylesheet">
+    <!-- Custom template Styles -->
+    <link href="css/template.css" rel="stylesheet">
+    <!-- Github ribbon -->
+    <link rel="stylesheet" href="css/gh-fork-ribbon.css">
+
+</head>
+
+<body role="document" ng-controller="AppCtrl">
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-fixed-left">
+    <div class="navbar-header">
+        <div class="navbar-brand component-header" data-ng-click="menuOption='about'">Components</div>
+    </div>
+    <div id="navbar" class="">
+        <ul class="nav navbar-nav">
+
+            <li><a href="#" data-ng-click="menuOption='buttons'">Buttons</a></li>
+            <li><a href="#" data-ng-click="menuOption='cards'">Cards</a></li>
+            <li><a href="#" data-ng-click="menuOption='collapsible'">Collapsible</a></li>
+            <li><a class="dropdown-header" data-ng-click="showFormElements=!showFormElements">Form Input Elements</a>
+                <ul class="cssSlideUp nav-dropdown" data-ng-show="showFormElements">
+                    <li><a href="#" data-ng-click="menuOption='checkboxes'">Checkbox</a></li>
+                    <li><a href="#" data-ng-click="menuOption='radio buttons'">Radio buttons</a></li>
+                    <li><a href="#" data-ng-click="menuOption='select dropdown'">Select dropdown</a></li>
+                    <li><a href="#" data-ng-click="menuOption='text area'">Text Area</a></li>
+                    <li><a href="#" data-ng-click="menuOption='text fields'">Text Fields</a></li>
+                </ul>
+            </li>
+            <li><a href="#" data-ng-click="menuOption='loader'">Loader</a></li>
+            <li><a href="#" data-ng-click="menuOption='modals'">Modals</a></li>
+            <li><a href="#" data-ng-click="menuOption='pagination'">Pagination</a></li>
+            <li><a href="#" data-ng-click="menuOption='tabs'">Tabs</a></li>
+            <li><a href="#" data-ng-click="menuOption='toasts'">Toasts</a></li>
+            <li><a href="#" data-ng-click="menuOption='typography'">Typography</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="theme-showcase" role="main">
+    <div class="jumbotron">
+        <h1 data-ng-click="menuOption='about'">Style Guide</h1>
+        <a class="" href="css/style-guide.css" download="nv-style-guide.css" class="download-btn">
+            <button class="btn btn-primary btn-lg">Download CSS</button>
+        </a>
+    </div>
+    <div class="page-content"></div>
+    <div class="page-header">
+        <h3>{{menuOption}}</h3>
+    </div>
+    <div ng-repeat="menu in menuOptions" ng-include src="menu.templateUrl" data-ng-show="menuOption==menu.menuOption"
+         class="{{menu.menuOption}}-content">
+        {{model.name}}
+    </div>
+</div>
+</div> <!-- /container -->
+
+<a class="github-fork-ribbon" href="http://url.to-your.repo" title="Fork me on GitHub">Fork me on GitHub</a>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.js"></script>
+<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+<script type="text/javascript" src="js/waves.js"></script>
+<script type="text/javascript" src="js/angular-toastr.tpls.min.js"></script>
+<script type="text/javascript" src="js/app/template.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>

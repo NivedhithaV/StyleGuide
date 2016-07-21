@@ -1,0 +1,114 @@
+<form name="textFieldForm">
+
+    <div class="row">
+        <div class="code-wrapper">
+            <div class="code-label">Code Snippet</div>
+            <xmp class="prettyprint card-panel code-block">
+    <div class="form-group col-md-4" data-ng-class="{disabled: isIpDisabled == true}">
+        <span class="fa fa-ban"> </span>
+        <input type="text" class="form-control" placeholder="Placeholder" data-ng-disabled="isIpDisabled"
+               value="form group with .disabled">
+        <label>Disabled text field</label> <!-- label should always be after the input field -->
+    </div>
+            </xmp>
+        </div>
+        <fieldset class="form-group">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" placeholder="Placeholder">
+                <label>Regular text field</label>
+            </div>
+            <div class="form-group col-md-4" data-ng-class="{disabled: isIpDisabled == true}">
+                <span class="fa fa-ban"> </span>
+                <input type="text" class="form-control" placeholder="Placeholder" data-ng-disabled="isIpDisabled"
+                       value="form group with .disabled">
+                <label>Disabled text field</label> <!-- label should always be after the input field -->
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" placeholder="Placeholder" readonly value="This is a readOnly field">
+                <label>ReadOnly text field</label> <!-- label should always be after the input field -->
+            </div>
+        </fieldset>
+    </div>
+    <div class="row">
+        <div class="code-wrapper">
+            <div class="code-label">Code Snippet</div>
+            <xmp class="prettyprint card-panel code-block">
+    <div class="form-group col-md-4" data-ng-class="{focused: isFocused == true}">
+        <span class="text-required">Required</span>
+        <input type="text" class="form-control" placeholder="Placeholder" required="required" name="requiredField"
+               data-ng-model="requiredField"
+               data-ng-focus="isFocused=true" data-ng-blur="isFocused=false">
+        <label>Required text field with errors</label> <!-- label should always be after the input field -->
+        <div data-ng-messages="textFieldForm.requiredField.$error" data-ng-show="textFieldForm.requiredField.$touched"
+             data-ng-hide="isFocused == true">
+            <div data-ng-message="required">Error message</div>
+        </div>
+    </div>
+            </xmp>
+        </div>
+        <fieldset class="form-group">
+            <div class="form-group col-md-4" data-ng-class="{focused: ipReqFocused == true}">
+                <span class="text-required" data-ng-show="textFieldForm.requiredField.$error.required">Required</span>
+                <input type="text" class="form-control" placeholder="Placeholder" required data-ng-focus="ipReqFocused=true"
+                       data-ng-blur="ipReqFocused=false">
+                <label>Required text field</label> <!-- label should always be after the input field -->
+            </div>
+            <div class="form-group col-md-4" data-ng-class="{focused: ipReq2Focused == true}">
+                <span class="text-required">Required</span>
+                <input type="text" class="form-control" placeholder="Placeholder" required="required" name="requiredField"
+                       data-ng-model="requiredField"
+                       data-ng-focus="ipReq2Focused=true" data-ng-blur="ipReq2Focused=false">
+                <label>Required text field with errors</label> <!-- label should always be after the input field -->
+                <div data-ng-messages="textFieldForm.requiredField.$error" data-ng-show="textFieldForm.requiredField.$touched"
+                     data-ng-hide="ipReq2Focused == true">
+                    <div data-ng-message="required">Error message</div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="row">
+        <div class="code-wrapper">
+            <div class="code-label">Code Snippet</div>
+            <xmp class="prettyprint card-panel code-block">
+        <div class="form-group col-md-4" data-ng-class="{focused: isFocused == true}">
+            <span class="text-required" data-ng-show="textFieldForm.validField.$error.required">Required</span>
+            <span class="fa fa-check" data-ng-show="textFieldForm.validField.$valid"> </span>
+            <span class="fa fa-ban" data-ng-show="textFieldForm.validField.$error.minlength"> </span>
+            <input type="text" class="form-control" placeholder="Placeholder" data-ng-focus="isFocused=true"
+                   data-ng-blur="isFocused=false" data-ng-model="validField" name="validField" required data-ng-minlength="6">
+            <label>Real time validation: success</label> <!-- label should always be after the input field -->
+            <div data-ng-messages="textFieldForm.validField.$error" data-ng-hide="isFocused == true" data-ng-show="textFieldForm.validField.$dirty">
+                <div data-ng-message="required">Value is required</div>
+                <div data-ng-message="minlength">Value should be at least 6 characters</div>
+            </div>
+        </div>
+            </xmp>
+        </div>
+        <fieldset class="form-group">
+            <div class="form-group col-md-4" data-ng-class="{focused: ipReq3Focused == true}">
+                <span class="text-required" data-ng-show="textFieldForm.validField.$error.required">Required</span>
+                <span class="fa fa-check" data-ng-show="textFieldForm.validField.$valid"> </span>
+                <span class="fa fa-ban" data-ng-show="textFieldForm.validField.$error.minlength"> </span>
+                <input type="text" class="form-control" placeholder="Placeholder" data-ng-focus="ipReq3Focused=true"
+                       data-ng-blur="ipReq3Focused=false" data-ng-model="validField" name="validField" required data-ng-minlength="6">
+                <label>Real time validation: success</label> <!-- label should always be after the input field -->
+                <div data-ng-messages="textFieldForm.validField.$error" data-ng-hide="ipReq3Focused == true" data-ng-show="textFieldForm.validField.$dirty">
+                    <div data-ng-message="required">Value is required</div>
+                    <div data-ng-message="minlength">Value should be at least 6 characters</div>
+                </div>
+            </div>
+            <div class="form-group col-md-4" data-ng-class="{focused: ipReq4Focused == true}">
+                <span class="text-required" data-ng-show="textFieldForm.invalidField.$error.required">Required</span>
+                <span class="fa fa-check" data-ng-show="textFieldForm.invalidField.$valid"> </span>
+                <span class="fa fa-ban" data-ng-show="textFieldForm.invalidField.$error.minlength"> </span>
+                <input type="text" class="form-control" placeholder="Placeholder" name="invalidField" data-ng-model="invalidField"
+                       data-ng-focus="ipReq4Focused=true;" data-ng-blur="ipReq4Focused=false" required data-ng-minlength="6">
+                <label>Real time validation: errors</label> <!-- label should always be after the input field -->
+                <div data-ng-messages="textFieldForm.invalidField.$error" data-ng-hide="ipReq4Focused == true" data-ng-show="textFieldForm.invalidField.$dirty">
+                    <div data-ng-message="required">Value is required</div>
+                    <div data-ng-message="minlength">Value should be at least 6 characters</div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</form> <!-- /text fields -->

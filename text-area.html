@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="code-wrapper">
+        <div class="code-label">Code Snippet</div>
+        <xmp class="prettyprint card-panel code-block">
+    <div class="form-group col-md-6">
+        <textarea class="form-control" id="textarea" data-ng-model="textAreaVal"></textarea>
+        <label for="textarea">Text Area:</label> <!-- label should always be after the textarea -->
+        <span class="counter">{\{ 30 - textAreaVal.length }}30 characters remaining</span> <!-- counter should always be after the label -->
+    </div>
+        </xmp>
+    </div>
+    <fieldset class="form-group">
+        <div class="form-group col-md-6">
+            <textarea class="form-control" id="textarea" data-ng-model="textArea"></textarea>
+            <label for="textarea">Text Area:</label> <!-- label should always be after the textarea -->
+            <span class="counter">{{30 - textArea.length}}/30 characters remaining</span> <!-- counter should always be after the label -->
+        </div>
+        <div class="form-group col-md-6" data-ng-class="{focused: ipReqFocused == true}">
+                <textarea class="form-control" id="textarea" data-ng-focus="ipReqFocused=true"
+                          data-ng-blur="ipReqFocused=false" data-ng-model="textArea1"></textarea>
+            <label for="textarea">Required Text Area:</label> <!-- label should always be after the textarea -->
+            <span class="counter">{{30 - textArea1.length}}/30 characters remaining</span> <!-- counter should always be after the label -->
+            <span class="text-required">Required</span>
+        </div>
+    </fieldset>
+    <fieldset class="form-group">
+        <div class="form-group col-md-6">
+            <textarea class="form-control" id="textarea2" readonly data-ng-model="textArea2"></textarea>
+            <label for="textarea2">ReadOnly Text Area:</label> <!-- label should always be after the textarea -->
+            <span class="counter">{{30 - textArea2.length}}/30 characters remaining</span> <!-- counter should always be after the label -->
+        </div>
+        <div class="form-group col-md-6">
+            <textarea class="form-control" id="textarea3" disabled data-ng-model="textArea3"></textarea>
+            <label for="textarea3">Disabled Text Area:</label> <!-- label should always be after the textarea -->
+            <span class="counter">{{30 - textArea3.length}}/30 characters remaining</span> <!-- counter should always be after the label -->
+        </div>
+    </fieldset>
+</div>

@@ -1,0 +1,24 @@
+<div class="code-wrapper">
+    <div class="code-label">Code Snippet</div>
+    <xmp class="prettyprint card-panel code-block">
+    <button type="button" class="btn btn-default btn-lg" data-ng-click="openToast()">Open Info Toast</button>
+
+    <script>
+    $scope.openToast = function () {
+        toastr.info('FYI');
+        toastr.success('Action successful', 'Success');
+        toastr.warning('Try again.', 'Warning');
+        toastr.error( 'Action failed', 'Error');
+    };
+    </script>
+    </xmp>
+</div>
+<br/>
+<button type="button" class="btn btn-default btn-lg" data-ng-click="openInfoToast()">Open Info Toast</button>
+<br/><br/><br/>
+<button type="button" class="btn btn-success btn-lg" data-ng-click="openSuccessToast()">Open Success Toast</button>
+<br/><br/><br/>
+<button type="button" class="btn btn-warning btn-lg" data-ng-click="openWarningToast()">Open Warning Toast</button>
+<br/><br/><br/>
+<button type="button" class="btn btn-danger btn-lg" data-ng-click="openErrorToast()">Open Error Toast</button>
+<!-- /toasts -->

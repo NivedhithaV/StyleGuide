@@ -1,0 +1,46 @@
+<div class="code-wrapper">
+    <div class="code-label">Code Snippet</div>
+    <xmp class="prettyprint card-panel code-block">
+    <uib-pagination total-items="150" data-ng-model="currentPage" max-size="5" class="pagination-sm"
+                    boundary-links="true" force-ellipses="true" num-pages="numPages"></uib-pagination>
+    </xmp>
+</div>
+
+<div class="col-md-2 subheading-label">.pagination-sm </div>
+<uib-pagination total-items="150" data-ng-model="currentPage" max-size="5" class="pagination-sm"
+                boundary-links="true" force-ellipses="true" num-pages="numPages"></uib-pagination>
+<br/><br/>
+<div class="col-md-2 subheading-label">.pagination-md </div>
+<uib-pagination total-items="150" data-ng-model="currentPage" max-size="5" class="pagination-md"
+                boundary-links="true" force-ellipses="true" num-pages="numPages"></uib-pagination>
+<br/><br/>
+<div class="col-md-2 subheading-label">.pagination-lg </div>
+<uib-pagination total-items="150" data-ng-model="currentPage" max-size="5" class="pagination-lg"
+                boundary-links="true" force-ellipses="true" num-pages="numPages"></uib-pagination>
+<br/><br/>
+<div class="col-md-2 subheading-label">Icon template 1 </div>
+<uib-pagination total-items="150" data-ng-model="currentPage" max-size="5" class="pagination-lg"
+                template-url="template/pagination/icon-pagination.html"
+                boundary-links="true" force-ellipses="true" num-pages="numPages"></uib-pagination>
+<script id="template/pagination/icon-pagination.html" type="text/ng-template">
+    <ul class="pagination">
+        <li ng-if="directionLinks" ng-class="{disabled: noPrevious()}"><a href ng-click="selectPage(page - 1)" title="Previous Page"><span class="pagination-icon fa fa-chevron-left"></span></a></li>
+        <li ng-repeat="page in pages track by $index" ng-class="{active: page.active}"><a href ng-click="selectPage(page.number)">{{page.text}}</a></li>
+        <li ng-if="directionLinks" ng-class="{disabled: noNext()}"><a href ng-click="selectPage(page + 1)" title="Next Page"><span class="pagination-icon fa fa-chevron-right"></span></a></li>
+    </ul>
+</script>
+<br/><br/>
+<div class="col-md-2 subheading-label">Icon template 2 </div>
+<uib-pagination total-items="150" data-ng-model="currentPage" max-size="5" class="pagination-lg"
+                template-url="template/pagination/pagination.html"
+                boundary-links="true" force-ellipses="true" num-pages="numPages"></uib-pagination>
+<script id="template/pagination/pagination.html" type="text/ng-template">
+    <ul class="pagination">
+        <li ng-if="boundaryLinks" ng-class="{disabled: noPrevious()}"><a href ng-click="selectPage(1)" title="First Page"> <span class="pagination-icon fa fa-angle-double-left"></span></a></li>
+        <li ng-if="directionLinks" ng-class="{disabled: noPrevious()}"><a href ng-click="selectPage(page - 1)" title="Previous Page"><span class="pagination-icon fa fa-angle-left"></span></a></li>
+        <li ng-repeat="page in pages track by $index" ng-class="{active: page.active}"><a href ng-click="selectPage(page.number)">{{page.text}}</a></li>
+        <li ng-if="directionLinks" ng-class="{disabled: noNext()}"><a href ng-click="selectPage(page + 1)" title="Next Page"><span class="pagination-icon fa fa-angle-right"></span></a></li>
+        <li ng-if="boundaryLinks" ng-class="{disabled: noNext()}"><a href ng-click="selectPage(totalPages)" title="Last Page"><span class="pagination-icon fa fa-angle-double-right"></span> </a></li>
+    </ul>
+</script>
+<!-- /pagination-->

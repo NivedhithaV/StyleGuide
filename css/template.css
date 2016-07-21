@@ -1,0 +1,183 @@
+.subheading-label {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 16px;
+}
+.about {
+  font-size: 16px;
+}
+/*
+  Hack to prevent screen jerk on modal open
+*/
+body {
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+}
+body.modal-open {
+  overflow: auto;
+}
+/*
+  Fixed left menu
+*/
+.navbar-fixed-left {
+  background-color: #444;
+  width: 230px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+.navbar-fixed-left .navbar-nav > li {
+  float: none;
+  /* Cancel default li float: left */
+}
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}
+.navbar-inverse .navbar-brand.component-header {
+  cursor: pointer;
+  width: 230px;
+  color: #444!important;
+  font-weight: bold;
+  font-size: 28px;
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
+}
+.navbar-inverse .navbar-brand.component-header:hover {
+  background-color: #f5f5f5;
+  color: #444!important;
+}
+.dropdown-header {
+  cursor: pointer;
+}
+.navbar-nav > li > a {
+  color: #bababa !important;
+  font-size: 20px;
+  padding: 10px;
+}
+.navbar-nav > li > a:hover {
+  color: #fff !important;
+}
+/* Navbar dropdown */
+.nav-dropdown > li > a {
+  color: #BABABA;
+  display: block;
+  font-size: 18px;
+  padding: 10px 25px;
+}
+.ng-hide-add,
+.ng-hide-remove {
+  /* ensure visibility during the transition */
+  display: block !important;
+  /* yes, important */
+}
+.cssSlideUp {
+  transition: .5s linear all;
+  padding: 10px;
+  height: 250px;
+  overflow: hidden;
+}
+.cssSlideUp.ng-hide {
+  height: 0;
+}
+/*
+  Content
+*/
+.jumbotron {
+  background-color: #444;
+  color: #FFF;
+  padding: 25px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+.jumbotron h1 {
+  margin-top: 10px;
+  cursor: pointer;
+}
+.jumbotron a {
+  margin: 10px 0px;
+}
+.jumbotron a button {
+  margin: 20px 0 0 0;
+}
+.page-content {
+  margin-top: 240px;
+}
+.theme-showcase {
+  margin-left: 230px;
+}
+div[ng-include] {
+  padding: 0 50px;
+}
+.label-text {
+  font-weight: bold;
+}
+.label-text-lg {
+  font-weight: bold;
+  font-size: 18px;
+}
+.page-header {
+  text-transform: Capitalize;
+  color: #555;
+  font-size: 45px;
+  line-height: 55px;
+  font-weight: 300;
+  padding: 0 50px;
+}
+.tab-content {
+  padding: 10px 0;
+  font-style: italic;
+}
+.temp {
+  margin: 50px;
+}
+.row {
+  margin-bottom: 15px;
+}
+/*
+  Code blocks
+*/
+.code-block {
+  background-color: #EEE;
+  font-family: "Courier New", Courier, monospace !important;
+  padding: 0;
+}
+.code-block span {
+  font-family: "Courier New", Courier, monospace !important;
+  font-size: 14px;
+}
+/*
+.buttons-content{
+  .code-block{
+    padding-bottom: 20px;
+  }
+}*/
+.how-to {
+  text-transform: Capitalize;
+  color: #555;
+  font-size: 45px;
+  line-height: 55px;
+  font-weight: 300;
+  border-bottom: 1px solid #eeeeee;
+  margin: 10px 0 20px;
+}
+.code-wrapper {
+  position: relative;
+}
+.code-label {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  color: #555;
+}
+.about-content xmp {
+  margin: 15px 0;
+}
